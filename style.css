@@ -1,0 +1,281 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: radial-gradient(circle at top, #070720, #000);
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* STAR BACKGROUND */
+#stars {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+}
+
+/* GLOW CURSOR */
+.cursor {
+  position: fixed;
+  width: 18px;
+  height: 18px;
+  background: rgba(130,120,255,0.6);
+  border-radius: 50%;
+  pointer-events: none;
+  box-shadow: 0 0 20px rgba(130,120,255,0.6);
+  transform: translate(-50%, -50%);
+  z-index: 999;
+}
+
+/* NAVBAR */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 18px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  backdrop-filter: blur(12px);
+  background: rgba(0,0,0,0.35);
+  z-index: 10;
+}
+
+nav h2 {
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+nav ul {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+}
+
+nav a {
+  text-decoration: none;
+  color: #ccc;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #8a7cff;
+}
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 80px;
+}
+
+.photo-wrap img {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 0 35px rgba(138,124,255,0.6);
+  margin-bottom: 30px;
+  transition: transform 0.4s;
+}
+
+.photo-wrap img:hover {
+  transform: scale(1.05);
+}
+
+.hero h1 {
+  font-size: 3.2rem;
+  font-weight: 700;
+}
+
+.hero span {
+  background: linear-gradient(90deg, #8a7cff, #5ee7df);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.tagline {
+  margin: 15px 0;
+  font-size: 1.2rem;
+  color: #ccc;
+}
+
+.stack {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* BUTTONS */
+.buttons {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 12px 30px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: 0.35s;
+}
+
+.primary {
+  background: #8a7cff;
+  color: #000;
+  box-shadow: 0 0 20px rgba(138,124,255,0.4);
+}
+
+.primary:hover {
+  transform: translateY(-3px);
+}
+
+.outline {
+  border: 1px solid #8a7cff;
+  color: #8a7cff;
+}
+
+.outline:hover {
+  background: #8a7cff;
+  color: #000;
+}
+
+/* SECTIONS */
+.section {
+  padding: 90px 10%;
+  text-align: center;
+}
+
+.section h2 {
+  font-size: 2.4rem;
+  margin-bottom: 30px;
+}
+
+/* ABOUT */
+.about-text {
+  max-width: 720px;
+  margin: auto;
+  color: #bbb;
+  line-height: 1.7;
+}
+
+.about-text span {
+  color: #8a7cff;
+}
+
+/* SKILLS */
+.skill-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.skill-grid span {
+  padding: 12px 24px;
+  border-radius: 30px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.1);
+  transition: 0.3s;
+}
+
+.skill-grid span:hover {
+  background: #8a7cff;
+  color: #000;
+}
+
+/* PROJECTS */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: 0.4s;
+}
+
+.card:hover img {
+  transform: scale(1.08);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.card:hover .overlay {
+  opacity: 1;
+}
+
+.overlay h3 {
+  margin-bottom: 8px;
+  color: #8a7cff;
+}
+
+/* FOOTER */
+footer {
+  padding: 40px;
+  text-align: center;
+  color: #aaa;
+  font-size: 0.9rem;
+}
+
+/* SCROLL REVEAL */
+.reveal {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: 1s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+  nav {
+    padding: 15px 6%;
+  }
+
+  .hero h1 {
+    font-size: 2.4rem;
+  }
+
+  .photo-wrap img {
+    width: 180px;
+    height: 180px;
+  }
+
+  .section {
+    padding: 70px 6%;
+  }
+}
